@@ -7,19 +7,19 @@ highlighter: rouge
 markdown: kramdown
 disqus: dbyll
 google_analytics: dbyll
-title: dbyll
+title: 沪江技术学院
 
 defaults:
   -
     scope:
       path: "" # empty string for all files
     values:
-      title: dbyll
+      title: 沪江技术学院
 
 description: Stylish Jekyll Theme
 author:
-  name: dbyll
-  email: dbyll@ismaildemirbilek.com
+  name: 沪江技术学院
+  email: Tech@hujiang.com
   github: dbtek
   twitter: dbtek
   pinterest: asd123
