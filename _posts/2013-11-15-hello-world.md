@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Hello Gary!
+title: Hello World!
 categories: [general, setup, demo]
 tags: [demo, dbyll, dbtek, setup]
 fullview: true

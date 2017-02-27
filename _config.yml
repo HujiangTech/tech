@@ -7,19 +7,19 @@ highlighter: rouge
 markdown: kramdown
 disqus: dbyll
 google_analytics: dbyll
-title: gary
+title: dbyll
 
 defaults:
   -
     scope:
       path: "" # empty string for all files
     values:
-      title: gary
+      title: dbyll
 
 description: Stylish Jekyll Theme
 author:
-  name: gary9800
-  email: test@hujiang.com
+  name: dbyll
+  email: dbyll@ismaildemirbilek.com
   github: dbtek
   twitter: dbtek
   pinterest: asd123
