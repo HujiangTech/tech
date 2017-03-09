@@ -1,3 +1,12 @@
+---
+layout: post
+title: 异步前行的JavaScript
+categories: [其他]
+tags: [JavaScript , 测试]
+description: ECMAScript在发展过程中得到的巨大提升之一就是关于异步处理。如果你是这方面的新手，可以从asynchronous programming here学到不少。幸运的是，在Windows 10的新一代Edge浏览器中，我们已经包含了这些特性，
+
+---
+
 
 *此文来自微软web开发系列。*
 

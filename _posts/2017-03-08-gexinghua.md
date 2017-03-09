@@ -1,3 +1,12 @@
+---
+layout: post
+title: 什么是个性化学习？
+categories: [其他]
+tags: [个性化学习, 差异化教学]
+description: 个性化学习（personalized learning)就是因材施教：根据学生的个体需要给予他想学的内容。前提是想学，想学，想学。
+
+---
+
 ######什么是个性化学习？
 个性化学习（personalized learning)就是因材施教：根据学生的个体需要给予他想学的内容。前提是想学，想学，想学。正如著名教育家Jack Frymier说的那样：
 

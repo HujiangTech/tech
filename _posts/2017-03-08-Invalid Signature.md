@@ -1,3 +1,13 @@
+---
+layout: post
+title: Invalid Signature 问题排查
+categories: [其他]
+tags: [app , 测试]
+description: 注意到上述的 application-identifier 的 App ID Prefix 和 team-identifier 不一致，会不会是这个引起的？
+正好有两个同事在旧金山参加WWDC，就这个问题去咨询过苹果工程师（一位女工程师，今年貌似苹果提倡女性，很多WWDC上的session都是女性工程师和manager），她说：“this should be the same”，看来就是这个引起的。
+
+---
+
 苹果邮件描述如下：  
 "Dear developer, We have discovered one or more issues with your recent delivery for "App". To process your delivery, the following issues must be corrected: **Invalid Signature** - Code object is not signed at all. Make sure you have signed your application with a distribution certificate, not an ad hoc certificate or a development certificate. Verify that the code signing settings in Xcode are correct at the target level (which override any values at the project level). Additionally, make sure the bundle you are uploading was built using a Release target in Xcode, not a Simulator target. If you are certain your code signing settings are correct, choose "Clean All" in Xcode, delete the "build" directory in the Finder, and rebuild your release target. For more information, please consulthttps://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html Once these issues have been corrected, you can then redeliver the corrected binary."
 
