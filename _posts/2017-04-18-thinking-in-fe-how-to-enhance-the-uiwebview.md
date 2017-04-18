@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 上手 Webpack ? 这篇就够了！
-categories: [web前端]
-tags: [前端, Webpack]
-description: JavaSript 模块化打包已混迹江湖许久。2009年，RequireJS 就提交了它的第一个版本，Browserify 接踵而至，随后其他打包工具也开始大行其道。最终，Webpack 从其中脱颖而出。如果你对它不甚了解，希望我的文章能让你上手这件强力打包工具。
+title: Thinking in FE 更好用的 UIWebView
+categories: [iOS]
+tags: [UIWebView]
+description: 本篇我们来谈谈UIWebView，虽然在 iOS 8.0 之后更加推荐使用WKWebView，但在你没放弃 iOS 7.0 之前，不妨看看如何让这陈旧的UIWebView更加好用些，当然这里的一些思想同样可以迁移到WKWebView中。
 ---
 
 
