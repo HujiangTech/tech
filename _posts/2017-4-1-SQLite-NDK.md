@@ -6,6 +6,9 @@ tags: [SQLite, NDK]
 description: 这个问题的起因是，某项目需要在 NDK 中使用 SQLite，并且这个库同时也需要在 iOS 端使用。一开始的开发均很顺利，已有文章予以总结，
 ---
 
+> 
+> 
+
 这个问题的起因是，某项目需要在 NDK 中使用 SQLite，并且这个库同时也需要在 iOS 端使用。一开始的开发均很顺利，已有文章予以总结，[点击查看该文章](http://rarnu.com/index.php/2017/03/17/sqlite_cross_platform/)。
 
 但是当程序运行到 Android N 上时，情况就不对了，整个程序直接崩溃，报的错误是 ```Can not load dynamic library "libsqlite.so"```。保险起见，我检查了一下 ```/system/lib``` 和 ```/system/lib64```，确保了 ```libsqlite.so``` 是存在的。那么问题就变成了，无法调用这个存在的库？
