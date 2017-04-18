@@ -1,11 +1,11 @@
 ---
 layout: post
-title: 摆脱浏览器限制的Javascript
-categories: [Web前端]
-tags: [Javascript, Web前端]
-description: 技术世界在发展，JavaScript也在同步发展。JavaScript在软件世界建起地盘的头几年，它从没想过涉足服务应用程序、移动端应用程序以及机器人之类业务。今天，随着JavaScript的发展，这门语言已经进入了聊天机器人、虚拟现实以及物联网等新领域。
-
+title: 上手 Webpack ? 这篇就够了！
+categories: [web前端]
+tags: [前端, Webpack]
+description: JavaSript 模块化打包已混迹江湖许久。2009年，RequireJS 就提交了它的第一个版本，Browserify 接踵而至，随后其他打包工具也开始大行其道。最终，Webpack 从其中脱颖而出。如果你对它不甚了解，希望我的文章能让你上手这件强力打包工具。
 ---
+
 
 技术世界在发展，JavaScript也在同步发展。JavaScript在软件世界建起地盘的头几年，它从没想过涉足服务应用程序、移动端应用程序以及机器人之类业务。今天，随着JavaScript的发展，这门语言已经进入了聊天机器人、虚拟现实以及物联网等新领域。
 
