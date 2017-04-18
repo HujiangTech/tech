@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Thinking in FE 更好用的 UIWebView
+title: Thinking in FE 更好用的 UIWebView  
 categories: [iOS]
 tags: [UIWebView, Kaki]
 description: 本篇我们来谈谈`UIWebView`，虽然在 iOS 8.0 之后更加推荐使用`WKWebView`，但在你没放弃 iOS 7.0 之前，不妨看看如何让这陈旧的`UIWebView`更加好用些，当然这里的一些思想同样可以迁移到`WKWebView`中。
