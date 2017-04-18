@@ -6,6 +6,8 @@ tags: [UIWebView]
 description: 本篇我们来谈谈UIWebView，虽然在 iOS 8.0 之后更加推荐使用WKWebView，但在你没放弃 iOS 7.0 之前，不妨看看如何让这陈旧的UIWebView更加好用些，当然这里的一些思想同样可以迁移到WKWebView中。
 ---
 
+>   作者：翁阳 （沪江iOS架构师）    
+>   本文原创，转载请注明作者及出处。    
 
 继上一篇 Thinking 以来过去太久时间了，这些日子里一直在疲于奔命，无论如何繁忙，静下来写写博客还是一件非常值得的事情。
 

@@ -6,6 +6,11 @@ tags: [前端, Javascript]
 description: 技术世界在发展，JavaScript也在同步发展。JavaScript在软件世界建起地盘的头几年，它从没想过涉足服务应用程序、移动端应用程序以及机器人之类业务。今天，随着JavaScript的发展，这门语言已经进入了聊天机器人、虚拟现实以及物联网等新领域。
 ---
 
+>   作者：安冬 （沪江Web前端开发工程师）    
+>   本文原创翻译，转载请注明作者及出处。    
+>   原文地址：http://developer.telerik.com/topics/web-development/JavaScript-2017-beyond-browser/
+> 
+
 
 技术世界在发展，JavaScript也在同步发展。JavaScript在软件世界建起地盘的头几年，它从没想过涉足服务应用程序、移动端应用程序以及机器人之类业务。今天，随着JavaScript的发展，这门语言已经进入了聊天机器人、虚拟现实以及物联网等新领域。
 
