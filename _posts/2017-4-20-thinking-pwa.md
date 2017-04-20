@@ -1,10 +1,11 @@
 ---
+
 layout: post
 title: Thinking in FE 谈谈 PWA 的那些事
 categories: [iOS]
 tags: [PWA，Service Worker，Offline Web]
 description: Web 前端是一个发展迅速，更新频繁，充满野心的领域。一群开发者，以及浏览器甚至操作系统的产商都在思考着，如何让 Web 前端统一整个大前端，这一天似乎很遥远，却又感觉一天天的在接近。
----  
+---
 
 >   作者：翁阳 （沪江iOS架构师）    
 >   本文原创，转载请注明作者及出处。
