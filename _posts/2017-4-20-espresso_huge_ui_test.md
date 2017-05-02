@@ -43,7 +43,7 @@ Espresso 是 Google 在 2013 年推出的 Android UI 测试的开源框架。其
 
 这是我为我们测试平台定义的一个基本测试单位，也是我们整个测试方案里面的一个核心概念。这里有两个方面需要明确一下。
 
-- 有些人会说这是 Espresso 的标准写法，因为你在定义一个 Espresso 测试文件时就必须要指定一个启动的 Activity。但是从官方的 Demo 来看，他们倾向于这个 Activity 仅仅是一个入口，你应该在完成一条完成的测试用例（你可以根据需要跳转到任何页面）以后再进行相应验证。但是在我们的这里，启动的这个页面（可以是 Activity 或者 Fragment）以后就只做当前页面相关的逻辑测试，如果有页面跳转也仅仅是测试是否能成功跳转，不会再对应的界面产生更多的交互。
+- 有些人会说这是 Espresso 的标准写法，因为你在定义一个 Espresso 测试文件时就必须要指定一个启动的 Activity。但是从官方的 Demo 来看，他们倾向于这个 Activity 仅仅是一个入口，你应该在完成一条完整的测试用例（你可以根据需要跳转到任何页面）以后再进行相应验证。但是在我们的这里，启动的这个页面（可以是 Activity 或者 Fragment）以后就只做当前页面相关的逻辑测试，如果有页面跳转也仅仅是测试是否能成功跳转，不会再对应的界面产生更多的交互。
 
 - 由于 Espresso 是基于 JUnit 实现的，所以你可以针对单个页面编写多个独立得测试用例，它们会以随机的顺序被调用。在我们的单页面测试中，只有单一的测试入口，然后顺序执行这个页面需要执行的所有测试。
 
@@ -147,7 +147,27 @@ at android.os.Looper.loop(Looper.java:135)
 
 根据 [Android espresso onData error](http://baiduhix.blogspot.com/2015/07/android-espresso-ondata-error.html) 这篇文章可以找到对应的解决方案，但是实际使用下来效果并不好，主要是 gradle 的 Android 插件在不同的版本里面对于引入 Java Core 的代码处理方式有差别，而且我用的 2.2.3 的版本根本就不能用，所以这里的建议绕过不要使用这个方法，我们最后是通过自己定义了一个 Match 来解决这个问题的。
 
+### Drawerlayout 的坑导致用例执行失败
 
+在官方 Support 包里面的 Drawerlayout 控件有个特性，就是当你触摸到它的触发区域就会发出一个延时操作（160ms），如果这段时间内没有子试图触发事件（如没有及时抬起手指）就会自动触发 Peek 动画，从而导致子试图的事件得不到相应。
+
+Espresso 的 perform(click()) 操作是先后发送了一个 EventDown 和 EventUp 事件，由于是异步发送的，所以没法保证每次两个事件的执行间隔在 160ms 之内，所以如果在 Drawerlayout 的拖拽相应区域内针对其他子试图的点击事件有可能得不到相应，从而导致用例执行失败。
+
+这种失败并不是业务逻辑出错，完全是 Drawerlayout 控件设计不合理导致的，而且 Google 的大神们根本没有提供关闭这个功能的接口（他们这么任性不是一次两次了）。 Drawerlayout 是官方提供的控件，你可以选择不使用这个控件自定义一个。我们的解决方案是通过 AOP 的方式在 Drawerlayout 发送这个延时操作以后马上将他从执行队列里移除，从而实现将它这个功能关闭的效果。
+
+```
+@Pointcut("execution(* android.support.v4.widget.DrawerLayout.ViewDragCallback.onEdgeTouched(..))")
+public void edgeTouchedPoint() {}
+
+@After("edgeTouchedPoint()")
+public void onExecutionPoint(final JoinPoint joinPoint) throws Throwable {
+    Reflect.on(joinPoint.getTarget()).call("removeCallbacks");
+}
+```
+
+## 结束语
+
+经过诸多尝试和实践，虽然过程中碰到了很多的问题，但最后都逐个被解决，证明用 Espresso 实现全功能覆盖的可行性，我们的方案已经开始实施，截止到现在虽然还没有完全实现覆盖，但是已经完成的部分已经开始产生效果，多次检测到由于开发不小心而导致的 bug，提高了产品的提测质量。可以预见在该方案完整实施后，将对产品质量有一个稳定、高效的保证。
 
 ## 参考内容
 
