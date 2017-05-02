@@ -1,10 +1,10 @@
- ---
+---   
 layout: post
 title: 翻译 | CSS网格（CSS Grid）布局入门
 categories: [Web前端]
 tags: [Web前端，CSS]
 description: CSS网格布局是浏览器Flexbox布局之后最重要的布局方式。我们可以忘记过去15年经常使用的的各种“神奇数字”，hacks和一系列变通布局方案。网格布局提供了非常简单的声明布局方式，之后再也不需要借助一些常见的主流css框架，也能减少很多手动实现的布局方式。
----
+---   
 
 >   原文作者：[Chris Wright](https://cm.engineering/@cwrightdesign?source=post_header_lockup)   
 >   译者：[华翔](#)  
@@ -12,10 +12,6 @@ description: CSS网格布局是浏览器Flexbox布局之后最重要的布局方
 >   原文地址：[Getting to know CSS Grid Layout](https://cm.engineering/getting-to-know-css-grid-layout-818e43ca71a5)   
 >   本文原创翻译，转载请注明作者及出处。 
  
- 
-
-
-# 翻译 | CSS网格（CSS Grid）布局入门
 
 ![banner](http://n1image.hjfile.cn/res7/2017/04/20/af1c9adfa03fdb0ee5343d933d967930.jpg)
 
@@ -320,3 +316,4 @@ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 
 如果你感兴趣并想进一步探究CSS网格，可以试下[Rachel Andrew的例子](http://gridbyexample.com/)，这里面通过带解释说明的实例探讨了CSS网格布局的每一个特性。
 
+ 
