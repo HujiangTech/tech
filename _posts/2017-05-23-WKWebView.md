@@ -41,7 +41,7 @@ NSURL *url = [NSURL URLWithString:@"https://www.hujiang.com"];
 
 流程上二者有一定的区别，如下图，左边是UIWebView，右边是WKWebView，在节点上，WKWebView比UIWebView多了一个询问过程，在服务器响应请求之后会询问是否载入内容到当前Frame，在控制上会比UIWebView粒度更细一些。
 
-![WKWebView和UIWebView差异](resources/img_01.png)
+![WKWebView和UIWebView差异](https://hujiangtech.github.io/tech/assets/pic/523/img_01.png)
 
 #### Delegate
 以上流程的控制主要是用过Protocol去实现，`WKWebView` 的代理协议为 `WKNavigationDelegate`，对比 `UIWebDelegate` 首先跳转询问，就是载入URL之前的一次调用，询问开发者是否下载并载入当前URL，UIWebView只有一次询问，就是请求之前的询问，而WKWebView在URL下载完毕之后还会发一次询问，让开发者根据服务器返回的Web内容再次做一次确定。
@@ -339,7 +339,7 @@ NSDate *date = [NSDate dateWithTimeIntervalSince1970:0];
 
 而iOS9之前，就只能通过删除文件来解决了，WKWebView的缓存数据会存储在 '~/Library/Caches/BundleID/WebKit/' 目录下，可通过删除该目录来实现清理缓存
 
-![Cache](resources/img_10.png)
+![Cache](https://hujiangtech.github.io/tech/assets/pic/523/img_10.png)
 
 8、其它问题
 还有一些零碎的小问题，比如通过写入NSUserDefaults来统一修改UserAgent；第三方库可能修改Delegate引起问题等等就不一一例举了，通过上述的问题，主要想表明出现问题的解决思路，只要不断去尝试，这些都不是阻碍。
