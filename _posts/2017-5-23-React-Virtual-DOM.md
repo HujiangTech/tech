@@ -1,4 +1,11 @@
-# 图解 React Virtual DOM （上）
+---   
+layout: post
+title: 图解 React Virtual DOM （上）
+categories: [Web前端]
+tags: [Web前端，CSS]
+description: 了解 React 的人几乎都听过说 Virtual DOM，甚至不了解 React 的人也听过 Virtual DOM。那么 React 的 Virtual DOM 到底长什么样子呢？今天我们将一探 React 的源码来揭开 React  Virtual DOM 的神秘面纱。
+---  
+
 
 了解 React 的人几乎都听过说 Virtual DOM，甚至不了解 React 的人也听过 Virtual DOM。那么 React 的 Virtual DOM 到底长什么样子呢？今天我们将一探 React 的源码来揭开 React  Virtual DOM 的神秘面纱。
 
