@@ -142,7 +142,7 @@ NSString *title = [webView stringByEvaluatingJavaScriptFromString:@"document.tit
 #### JS通知Native
 对比Native通知JS，JS通知Native就要复杂许多
 
-![JS调用Native](resources/img_02.png)
+![JS调用Native](https://hujiangtech.github.io/tech/assets/pic/523/img_02.png)
 
 在iOS6之前，UIWebView是不支持共享对象的，WEB端需要通知Native，需要通过修改location.url，利用跳转询问协议来间接实现，通过定义URL元素组成来规范协议
 在iOS7之后新增了 `JavaScriptCore` 库，内部有一个 `JSContext` 对象，可实现共享
@@ -183,7 +183,7 @@ WKWebView是一个新组件，并且是采用跨进程方案，实现了比较�
 
 在说问题之前，我们先看一下接入 `WKWebView` 之后的内存结构
 
-![接入内存结构](resources/img_03.png)
+![接入内存结构](https://hujiangtech.github.io/tech/assets/pic/523/img_03.png)
 
 为什么APP接入WKWebView之后，相对比UIWebView内存占用小那么多，是因为网页的载入和渲染这些耗内存和性能的过程都是由 `WKWebView` 进程去实现的，相对来说APP仅占很小一部分内存，甚至因为Web进程内存的膨胀，触发App的内存警告，导致App内存占用还会下跌。
 
@@ -194,7 +194,7 @@ WKWebView是一个新组件，并且是采用跨进程方案，实现了比较�
 #### Cookie问题
 对于Coolie问题，如下图，这张图是正常的登录Cookie认证流程，用户发起登录请求，后台登录之后，对浏览器写入Cookie，该Cookie会写入磁盘，在下次请求发起时会带上该Cookie，后台通过验证该Cookie来认证身份，确定用户已登录
 
-![Web流程](resources/img_04.png)
+![Web流程](https://hujiangtech.github.io/tech/assets/pic/523/img_04.png)
 
 而在 `WKWebView` 上，最大的问题就在于这里，看图，在整个访问的流程中，最重要的一环，`Cookie` 写入磁盘不支持，这就导致每次重新启动APP，`Cookie` 值都会丢失，做不到会话和Native同步。
 
@@ -203,7 +203,7 @@ WKWebView是一个新组件，并且是采用跨进程方案，实现了比较�
 既然WKWebView不支持写入磁盘，那我们手动干涉这个过程，手动读取Cookie写入磁盘，然后载入时再绑定Cookie是否可行？ 
 整个操作的流程如图所示，在登录之后，获取服务器返回的Cookie值，持久化到本地，在下次WebView初始化时，读取本地的缓存值手动设置Cookie
 
-![try](resources/img_05.png)
+![try](https://hujiangtech.github.io/tech/assets/pic/523/img_05.png)
 
 ##### 第一步，在请求发起时设置Cookie值，
 
@@ -219,7 +219,7 @@ NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 [wkWebView loadRequest:request];
 ```
 
-![request](resources/img_06.png)
+![request](https://hujiangtech.github.io/tech/assets/pic/523/img_06.png)
 
 而后者子资源请求的Cookie问题，可设置 `UserScript` , 通过 `UserContentController` 在页面载入前通过JS设置
 
@@ -238,7 +238,7 @@ WKWebView *wkWebView = [[WKWebView alloc] initWithFrame:CGRectZero c
 										   onfiguration:config];
 ```
 
-![child request](resources/img_07.png)
+![child request](https://hujiangtech.github.io/tech/assets/pic/523/img_07.png)
 
 但这种方式也不是完全没问题，如果页面包含多 'Frame'，出现302重定向时，Cookie无法跨域设置，针对MainFrame还可以通过 Delegate 的请求询问方法中手动设置，然后重新载入， 但非MainFrame就没办法了，而且Ajax请求是不会走请求询问方法，只能通过JS重写XMLHttpRequest去拦截，成本较高。我们先不考虑成本先这么做
 
@@ -280,14 +280,14 @@ if(cookies) {
 而整个流程的执行结果，是失败的
 原因是最关键的 `Cookie` 值是 `HttpOnly`，标记为 `HttpOnly` 的值通过JS是无法获取和设置的，而后端又不可能帽子Cookie被冒用的风险将该标记去掉。
 
-![OAuth2](resources/img_08.png)
+![OAuth2](https://hujiangtech.github.io/tech/assets/pic/523/img_08.png)
 
 总结来说，在WKWebView Cookie无法完美持久化的前提下，登录会话无法通过依赖Cookie来实现
 
 ##### 新方案：OAuth2
 抛弃对Cookie的依赖，可选的方案就比较有限了，比如OAuth2，OAuth2授权认证系统能很好的解决身份认证问题，并且支持多点，而且成熟
 
-![OAuth2](resources/img_09.png)
+![OAuth2](https://hujiangtech.github.io/tech/assets/pic/523/img_09.png)
 
 如图，Web第一次发起请求肯定是未授权状态，服务端验证失败，返回重定向登录，WKWebView通过监听指定URL（如这里的重定向地址），调用App内置的OAuth2认证服务，提示用户手动授权，APP得到授权后向第三方HJ认证服务器获取认证，得到认证token，序列化到本地，同时写入WKWebView Cookie，信息部署完毕之后，WKWebView带上认证token重新发起请求，服务器通过认证服务器验证通过，返回正常服务
 
