@@ -7,8 +7,6 @@ description: WKWebView是iOS8之后提供的一款浏览器组件，其载入速
 ---  
 
 
-#WKWebView
-
 > WKWebView是iOS8之后提供的一款浏览器组件，其载入速度和内存占用对比老的 `UIWebView` 来说简直是一次飞跃。下面对比 `UIWebView` 介绍该组件如何去使用，以及使用过程中会存在的问题。
 
 ## 目录

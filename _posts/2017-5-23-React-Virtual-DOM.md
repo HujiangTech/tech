@@ -6,7 +6,6 @@ tags: [Web前端，CSS]
 description: 了解 React 的人几乎都听过说 Virtual DOM，甚至不了解 React 的人也听过 Virtual DOM。那么 React 的 Virtual DOM 到底长什么样子呢？今天我们将一探 React 的源码来揭开 React  Virtual DOM 的神秘面纱。
 ---  
 
-
 了解 React 的人几乎都听过说 Virtual DOM，甚至不了解 React 的人也听过 Virtual DOM。那么 React 的 Virtual DOM 到底长什么样子呢？今天我们将一探 React 的源码来揭开 React  Virtual DOM 的神秘面纱。
 
 > 参考源码为React稳定版，版本号v15.4.1。
