@@ -12,7 +12,7 @@ description: 回想起了一段往事，现在回过头来看，蛮有趣的，�
 
 近期在小D十周年活动之际，又看到了一个自家专题工厂生成的页面。
 
-<img src="zt-preview.png" width="200">
+![zt-preview](https://hujiangtech.github.io/tech/assets/pic/602h5/zt-preview.png)
 
 [我与小D十年回忆 >>](http://m.hujiang.com/all/zt_snyy_7/)
 
@@ -21,7 +21,7 @@ description: 回想起了一段往事，现在回过头来看，蛮有趣的，�
 
 简单预览下后台编辑的界面，总的来说，编辑者可以像用一个桌面应用一样操作，最后直接生成一个h5页面。
 
-![preview](https://hujiangtech.github.io/tech/assets/pic/602h5/zmain.png)
+![preview](https://hujiangtech.github.io/tech/assets/pic/602h5/main.png)
 
 生成的页面举例
 
